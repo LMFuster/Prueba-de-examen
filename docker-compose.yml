@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  mysql-ejemplo:
+    image: mysql:8.0
+    ports:
+      - "3006:3006"
+    container_name: mysql_container
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: ejemplo
+    volumes:
+      - "./init.sql:/docker-entrypoint-initdb.d/init.sql"
